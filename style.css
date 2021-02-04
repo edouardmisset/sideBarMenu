@@ -1,0 +1,123 @@
+:root {
+  font-size: 16px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --navWidth: 5rem;
+  --bigNavWidth: 16rem;
+
+  --text-primary: hsl(0, 0%, 85%, 0.8);
+  --text-secondary: hsla(0, 0%, 90%);
+
+  --bg-primary: hsla(0, 0%, 15%, 0.9);
+  --bg-secondary: hsl(0, 0%, 10%);
+
+  --accentColor: hsl(293, 62%, 65%, 90%);
+  --transition-speed: 600ms;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--text-secondary);
+  color: var(--bg-secondary);
+}
+
+main {
+  margin-left: var(--navWidth);
+  padding: 1rem;
+}
+
+.navbar {
+  position: fixed;
+  background-color: var(--bg-primary);
+  transition: width 600ms ease;
+  overflow: scroll;
+}
+
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-item {
+  width: 100%;
+}
+
+.nav-item:last-child {
+  margin-top: auto;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  height: var(--navWidth);
+  color: var(--text-primary);
+  text-decoration: none;
+  filter: grayscale(100%) opacity(0.7);
+  transition: var(--transition-speed);
+}
+
+.nav-link:hover {
+  filter: grayscale(0%) opacity(1);
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+}
+
+.nav-link svg {
+  min-width: 2rem;
+  width: 2rem;
+  margin: 0 1.5rem;
+}
+
+.icon {
+  fill: var(--accentColor);
+  transition: var(--transition-speed);
+}
+
+.link-text {
+  display: none;
+  margin-left: 1rem;
+  color: var(--text-secondary);
+}
+
+/* Large screens */
+@media only screen and (min-width: 600px) {
+  .navbar {
+    top: 0;
+    width: var(--navWidth);
+    height: 100vh;
+  }
+
+  .navbar:hover {
+    width: var(--bigNavWidth);
+  }
+
+  .navbar:hover .link-text {
+    display: inline;
+  }
+}
+
+/* Small screens */
+@media only screen and (max-width: 600px) {
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+  }
+
+  .nav-link {
+    justify-content: center;
+  }
+
+  main {
+    margin: 0;
+  }
+}

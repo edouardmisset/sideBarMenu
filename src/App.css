@@ -1,10 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
-
 :root {
   font-size: 16px;
-  font-family: "Open Sans", sans-serif;
-  --navWidth: 5rem;
-  --bigNavWidth: 16rem;
+  font-family: 'Open Sans', sans-serif;
+  --nav-width: 5rem;
+  --big-nav-width: 16rem;
 
   --text-primary: hsl(0, 0%, 85%, 0.8);
   --text-secondary: hsla(0, 0%, 90%);
@@ -12,31 +10,12 @@
   --bg-primary: hsla(0, 0%, 15%, 0.9);
   --bg-secondary: hsl(0, 0%, 10%);
 
-  --accentColor: hsl(293, 62%, 65%, 90%);
+  --accent-color: hsl(293, 62%, 65%, 90%);
   --transition-speed: 600ms;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  background: var(--text-secondary);
-  color: var(--bg-secondary);
-}
-
-body p {
-  line-height: 1.5;
-  word-break: break-word;
-  text-align: justify; /* Justifies text */
-  hyphens: auto; /* Hypenation on auto */
-}
-
-h1 + p:first-letter {
-  font-size: 2em;
-  line-height: 0; /* The line-height must be adjusted to compensate for the increased font size, otherwise the leading for the overall line is disrupted. I find that any values below 0.4 work. */
-}
-
 main {
-  margin-left: var(--navWidth);
+  margin-left: var(--nav-width);
   padding: 1rem;
 }
 
@@ -68,7 +47,7 @@ main {
 .nav-link {
   display: flex;
   align-items: center;
-  height: var(--navWidth);
+  height: var(--nav-width);
   color: var(--text-primary);
   text-decoration: none;
   filter: grayscale(100%) opacity(0.7);
@@ -88,7 +67,7 @@ main {
 }
 
 .icon {
-  fill: var(--accentColor);
+  fill: var(--accent-color);
   transition: var(--transition-speed);
 }
 
@@ -102,12 +81,12 @@ main {
 @media only screen and (min-width: 600px) {
   .navbar {
     top: 0;
-    width: var(--navWidth);
+    width: var(--nav-width);
     height: 100vh;
   }
 
   .navbar:hover {
-    width: var(--bigNavWidth);
+    width: var(--big-nav-width);
   }
 
   .navbar:hover .link-text {
